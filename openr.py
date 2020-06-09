@@ -6,22 +6,22 @@ import os
 from datetime import datetime
 
 class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-    PURPLE = '\033[90m'
-    CYAN = '\033[0;36;47m'
-    RED   = "\033[1;31m"  
-    CYAN  = '\033[1;36m'
-    GREEN = "\033[0;32m"
-    RESET = "\033[0;0m"
-    BOLD    = "\033[;1m"
-    REVERSE = "\033[;7m"
+	HEADER = '\033[95m'
+	OKBLUE = '\033[94m'
+	OKGREEN = '\033[92m'
+	WARNING = '\033[93m'
+	FAIL = '\033[91m'
+	ENDC = '\033[0m'
+	BOLD = '\033[1m'
+	UNDERLINE = '\033[4m'
+	PURPLE = '\033[90m'
+	CYAN = '\033[0;36;47m'
+	RED   = "\033[1;31m"  
+	CYAN  = '\033[1;36m'
+	GREEN = "\033[0;32m"
+	RESET = "\033[0;0m"
+	BOLD    = "\033[;1m"
+	REVERSE = "\033[;7m"
 
 os.system('clear')
 '''print("#################################################")
@@ -43,11 +43,11 @@ print(bcolors.CYAN + """
 ░ ▒░▒░▒░ ▒▓▒░ ░  ░░░ ▒░ ░░ ▒░   ▒ ▒ ░ ▒▓ ░▒▓░░░ ▒░ ░ ▒▒▓  ▒ 
   ░ ▒ ▒░ ░▒ ░      ░ ░  ░░ ░░   ░ ▒░  ░▒ ░ ▒░ ░ ░  ░ ░ ▒  ▒ 
 ░ ░ ░ ▒  ░░          ░      ░   ░ ░   ░░   ░    ░    ░ ░  ░ 
-    ░ ░              ░  ░         ░    ░        ░  ░   ░    
-                                                     ░      
-      Open Redirect Scanner - Edited again by Heqmat
-                  Developer is Ak1T4
-                                          
+	░ ░              ░  ░         ░    ░        ░  ░   ░    
+													 ░      
+	  Open Redirect Scanner - Edited again by Heqmat
+				  Developer is Ak1T4
+										  
  
 
  """ + bcolors.RESET)
@@ -73,58 +73,58 @@ payload = sys.argv[2]
  
 with open(file) as f:
 
-        print("================================================================================")
-        print("[" + bcolors.PURPLE + datetime.now().strftime('%H:%M:%S') + bcolors.RESET + "]" + " [" + bcolors.OKBLUE + "INFO" + bcolors.ENDC + "] " + "Searching the ex-girlfriend target &  Holy Grial at [303 see others]..")
-        print("================================================================================")
-        time.sleep(4)
+		print("================================================================================")
+		print("[" + bcolors.PURPLE + datetime.now().strftime('%H:%M:%S') + bcolors.RESET + "]" + " [" + bcolors.OKBLUE + "INFO" + bcolors.ENDC + "] " + "Searching the ex-girlfriend target &  Holy Grial at [303 see others]..")
+		print("================================================================================")
+		time.sleep(4)
 
 
-        # loop for find the trace of all requests (303 is an open redirect) see the final destination
+		# loop for find the trace of all requests (303 is an open redirect) see the final destination
 
-                for line in f:
-            
+		for line in f:
 
-                    try:
-
-                        line2 = line.strip()
-
-                        line3 = 'http://' + line2 + payload
-
-                        print(line3)
-
-                        response = requests.get(line3, verify=True)    
-
-                        print(response)
-
-                        try:
-
-                            if response.history:
-                             
-                                print("[" + bcolors.PURPLE + datetime.now().strftime('%H:%M:%S') + bcolors.RESET + "] " + "[" + bcolors.OKBLUE + "INFO" + bcolors.ENDC + "] " + "Request was redirected.")
-                                
-
-                                for resp in response.history:
-
-                                    print("|")
-                                    print(resp.status_code, resp.url)
-                                    
-
-                                print("[" + bcolors.PURPLE + datetime.now().strftime('%H:%M:%S') + bcolors.RESET + "] " + "[" + bcolors.OKBLUE + "INFO" + bcolors.ENDC + "] " + "Final destination:")
+			try:
 
 
-                                print(bcolors.OKGREEN + "+" + bcolors.ENDC)
-                                print(response.status_code, response.url)
+				line2 = line.strip()
 
-                                
-                            else:
+				line3 = 'http://' + line2 + payload
 
-                                print("[" + bcolors.PURPLE + datetime.now().strftime('%H:%M:%S') + bcolors.RESET + "] " + "[" + bcolors.FAIL + "ERROR" + bcolors.ENDC + "] " + "Request was not redirected")
+				print(line3)
 
-                            
-                        except:
-                            
-                            print("[" + bcolors.PURPLE + datetime.now().strftime('%H:%M:%S') + bcolors.RESET + "] " + "[" + bcolors.FAIL + "ERROR" + bcolors.ENDC + "] " + "Connection Error!!!")
+				response = requests.get(line3, verify=True)    
 
-                    except:
+				print(response)
 
-                        print("[" + bcolors.PURPLE + datetime.now().strftime('%H:%M:%S') + bcolors.RESET + "] " + "User quit...")
+				try:
+
+					if response.history:
+							 
+						print("[" + bcolors.PURPLE + datetime.now().strftime('%H:%M:%S') + bcolors.RESET + "] " + "[" + bcolors.OKBLUE + "INFO" + bcolors.ENDC + "] " + "Request was redirected.")
+								
+
+						for resp in response.history:
+
+
+							print("|")
+							print(resp.status_code, resp.url)
+									
+
+						print("[" + bcolors.PURPLE + datetime.now().strftime('%H:%M:%S') + bcolors.RESET + "] " + "[" + bcolors.OKBLUE + "INFO" + bcolors.ENDC + "] " + "Final destination:")
+
+
+						print(bcolors.OKGREEN + "+" + bcolors.ENDC)
+						print(response.status_code, response.url)
+
+								
+							else:
+
+								print("[" + bcolors.PURPLE + datetime.now().strftime('%H:%M:%S') + bcolors.RESET + "] " + "[" + bcolors.FAIL + "ERROR" + bcolors.ENDC + "] " + "Request was not redirected")
+
+							
+					except:
+							
+						print("[" + bcolors.PURPLE + datetime.now().strftime('%H:%M:%S') + bcolors.RESET + "] " + "[" + bcolors.FAIL + "ERROR" + bcolors.ENDC + "] " + "Connection Error!!!")
+
+			except:
+				print("[" + bcolors.PURPLE + datetime.now().strftime('%H:%M:%S') + bcolors.RESET + "] " + "User quit...")
