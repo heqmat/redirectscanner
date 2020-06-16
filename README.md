@@ -5,4 +5,4 @@ Open Redirect Scanner for bug bounty hunters.
 python openr.py [your subdomain.list] ['your payload']
 
 # Example
-python openr.py facebook_sub.list '//yahoo.com/%2F..'
+python openred.py facebook_sub.list '//yahoo.com/%2F..'
